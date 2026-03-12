@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\CompanyProfile;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductPdfController extends Controller
@@ -10,11 +11,11 @@ class ProductPdfController extends Controller
     public function generate()
     {
         $products = Product::with('category')->get();
+        $profile = CompanyProfile::first();
 
-        $pdf = Pdf::loadView('pdf.products', compact('products'))
+        $pdf = Pdf::loadView('pdf.products', compact('products', 'profile'))
             ->setPaper('a4', 'portrait');
 
-        // 👇 Stream will open in browser instead of download
-        return $pdf->stream('product_brochure.pdf');
+        return $pdf->stream('S_Tech_Product_Catalogue.pdf');
     }
 }

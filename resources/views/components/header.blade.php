@@ -40,6 +40,9 @@
 
             <!-- Actions -->
             <div class="flex items-center gap-3">
+                <a href="{{ route('products.brochure') }}" target="_blank" class="hidden md:inline-flex items-center gap-2 text-sm px-4 py-2.5 rounded-xl border border-blue-200 text-blue-600 font-bold hover:bg-blue-50 transition-all" title="Download Product Catalogue">
+                    <i class="fas fa-file-pdf text-sm"></i> Brochure
+                </a>
                 <a href="{{ route('contact') }}" class="hidden md:inline-flex btn-primary text-sm px-6 py-2.5">
                     Get in Touch
                 </a>
@@ -57,7 +60,10 @@
             @foreach($menu as $item)
                 <a href="{{ $item['href'] }}" class="block px-5 py-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all text-sm font-medium">{{ $item['label'] }}</a>
             @endforeach
-            <a href="{{ route('contact') }}" class="flex items-center justify-center gap-2 px-5 py-3 mt-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-bold">
+            <a href="{{ route('products.brochure') }}" target="_blank" class="flex items-center justify-center gap-2 px-5 py-3 mt-2 rounded-xl border border-blue-200 text-blue-600 text-sm font-bold">
+                <i class="fas fa-file-pdf"></i> Download Brochure
+            </a>
+            <a href="{{ route('contact') }}" class="flex items-center justify-center gap-2 px-5 py-3 mt-1 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-bold">
                 Get in Touch
             </a>
         </div>
