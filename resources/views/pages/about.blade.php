@@ -42,8 +42,8 @@
                             <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Manufacturing Hub</p>
                         </div>
                         <div class="p-5 rounded-xl border border-slate-100 bg-slate-50">
-                            <h4 class="text-blue-600 font-black text-xl mb-1">ISO 9001</h4>
-                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Quality Standards</p>
+                            <h4 class="text-blue-600 font-black text-xl mb-1">Pan India</h4>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Supply Network</p>
                         </div>
                     </div>
                 </div>
