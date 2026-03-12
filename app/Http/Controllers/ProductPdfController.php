@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\CompanyProfile;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Services\BrochureService;
 
 class ProductPdfController extends Controller
 {
+    /**
+     * Serve the static brochure PDF. Generate it if it doesn't exist yet.
+     */
     public function generate()
     {
-        $products = Product::with('category')->get();
-        $profile = CompanyProfile::first();
+        $url = BrochureService::getUrl();
 
-        $pdf = Pdf::loadView('pdf.products', compact('products', 'profile'))
-            ->setPaper('a4', 'portrait');
-
-        return $pdf->stream('S_Tech_Product_Catalogue.pdf');
+        return redirect($url);
     }
 }
