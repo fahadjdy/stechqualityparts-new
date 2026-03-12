@@ -14,4 +14,8 @@ class Slider extends Model
         'description',
         'status',
     ];
+    public function getImageUrlAttribute()
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('assets/images/placeholder.png');
+    }
 }

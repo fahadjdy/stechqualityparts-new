@@ -13,4 +13,8 @@ class Gallery extends Model
         'name',
         'image',
     ];
+    public function getImageUrlAttribute()
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('assets/images/placeholder.png');
+    }
 }

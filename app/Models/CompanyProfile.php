@@ -37,4 +37,19 @@ class CompanyProfile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getLogoUrlAttribute()
+    {
+        return $this->logo ? asset('storage/' . $this->logo) : asset('assets/images/logo.png');
+    }
+
+    public function getCompanyImageUrlAttribute()
+    {
+        return $this->company_image ? asset('storage/' . $this->company_image) : asset('assets/images/about.png');
+    }
+
+    public function getFaviconUrlAttribute()
+    {
+        return $this->favicon ? asset('storage/' . $this->favicon) : asset('assets/images/favicon.png');
+    }
 }

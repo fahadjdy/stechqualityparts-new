@@ -7,11 +7,13 @@ use App\Http\Controllers\InquiryController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('category/{category}', [HomeController::class, 'category'])->name('category');
+Route::get('products', [HomeController::class, 'products'])->name('products.index');
+Route::get('category/{category}', [HomeController::class, 'category'])->name('category.show');
+Route::get('product/{product}', [HomeController::class, 'product'])->name('product.show');
+Route::get('gallery', [HomeController::class, 'gallery'])->name('gallery');
+Route::get('about', [HomeController::class, 'about'])->name('about');
 
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::post('/inquiries', [InquiryController::class, 'store'])->name('inquiries.store');

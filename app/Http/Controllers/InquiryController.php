@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inquiry;
 use Illuminate\Http\Request;
 
 class InquiryController extends Controller
 {
+    /**
+     * Store a new inquiry.
+     */
     public function store(Request $request)
     {
-        // Validation
         $validated = $request->validate([
-            'name'        => 'required|string|max:100',
-            'email'       => 'required|email|max:150',
-            'mobile'      => 'required|digits:10',
-            'description' => 'nullable|string|max:2000',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
         ]);
 
-        // Save to DB
-        Inquiry::create($validated);
+        \App\Models\Inquiry::create($validated);
 
-        // Redirect back with success
-        return redirect()->back()->with('success', 'Your inquiry has been submitted successfully!');
+        return back()->with('success', 'Your inquiry has been sent successfully!');
     }
 }
