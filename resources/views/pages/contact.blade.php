@@ -54,7 +54,7 @@
                         </div>
                         <div class="h-48 rounded-xl overflow-hidden border border-slate-100 mt-4">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6979219662!2d72.45199657519194!3d23.034870579165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b89668407cd%3A0x6a0c541575ca8f24!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                src="https://maps.google.com/maps?q={{ $profile->latitude ?? 23.0348 }},{{ $profile->longitude ?? 72.4519 }}&z=15&output=embed"
                                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
