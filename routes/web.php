@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductPdfController;
 use App\Http\Controllers\HomeController;
@@ -20,3 +21,8 @@ Route::post('/inquiries', [InquiryController::class, 'store'])->name('inquiries.
 
 Route::get('/products/brochure', [ProductPdfController::class, 'generate'])
     ->name('products.brochure');
+
+Route::get('/migration', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return '<pre>' . Artisan::output() . '</pre>';
+});
