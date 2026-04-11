@@ -31,3 +31,8 @@ Route::get('/products/brochure', [ProductPdfController::class, 'generate'])
 //     Artisan::call('optimize:clear');
 //     return '<pre>' . Artisan::output() . '</pre>';
 // });
+
+Route::get('/storage-link', function () {
+    Artisan::call('storage:link');
+    return '<pre>' . Artisan::output() . '</pre>';
+});
