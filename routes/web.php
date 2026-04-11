@@ -26,3 +26,8 @@ Route::get('/migration', function () {
     Artisan::call('migrate', ['--force' => true]);
     return '<pre>' . Artisan::output() . '</pre>';
 });
+
+Route::get('/optimize-clear', function () {
+    Artisan::call('optimize:clear');
+    return '<pre>' . Artisan::output() . '</pre>';
+});
